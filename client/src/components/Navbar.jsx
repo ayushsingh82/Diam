@@ -2,16 +2,16 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center p-4 bg-gray-800 text-white">
+    <div className="flex justify-between items-center p-4 bg-black text-white">
       {/* Name on the left */}
       <div className="pl-4">
-        <span className="font-bold"> Name</span>
+        <span className="font-bold"><a href='/'>Name</a> </span>
       </div>
       
       {/* Navigation links in the middle */}
       <div className="flex space-x-4">
-        <a href="/swap" className="hover:text-gray-400">Nav1</a>
-        <a href="#nav2" className="hover:text-gray-400">Nav2</a>
+        <a href="" className="">Explore</a>
+        <a href="/swap" className="">Swap</a>
       </div>
       
       {/* Create Account button on the right */}
