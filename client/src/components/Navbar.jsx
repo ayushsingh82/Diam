@@ -1,7 +1,16 @@
 import React from 'react';
 
 const Navbar = () => {
+    const gradientStyle = {
+        background: 'linear-gradient(to right, #45E1E5, #0052FF, #B82EA4, #FF9533, #7FD057, #45E1E5)',
+        height: '4px',
+        width: '100%',
+        border: 'none',
+      };
+      
+
   return (
+    <nav className=''>
     <div className="flex justify-between items-center p-4 bg-black text-white">
       {/* Name on the left */}
       <div className="pl-4">
@@ -21,6 +30,9 @@ const Navbar = () => {
         </button>
       </div>
     </div>
+
+    <div style={gradientStyle} />
+    </nav>
   );
 }
 
