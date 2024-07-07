@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const Swap = () => {
   const [balance, setBalance] = useState(0)
@@ -16,7 +17,7 @@ const Swap = () => {
     <h1 className='text-blue-200 text-center text-xl font-semibold'>Swap</h1>
 
       <div className='flex justify-center items-center mt-[40px] '>
-        <div className='relative border-4 border-black w-1/3 h-[700px] bg-white'>
+        <div className='relative border-4 border-black w-1/3 h-[720px] bg-white'>
 
           {/* Container for Bridge and settings button */}
           <div className='absolute top-0 left-0 right-0 flex justify-between p-4'>
@@ -110,6 +111,12 @@ const Swap = () => {
          <p>~60 sec</p>
          </div>
        </div>
+
+       {/*Wallet connect */}
+       <div className='mt-[8px] flex  justify-center'>
+       <ConnectButton />
+     </div>
+     
 
         </div>
       </div>
