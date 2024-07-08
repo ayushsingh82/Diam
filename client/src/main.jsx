@@ -7,6 +7,7 @@ import './index.css'
 import Home from './Home.jsx'
 import Navbar from './components/Navbar.jsx'
 import Swap from './components/Swap.jsx'
+import CreateWallet from './components/CreateWallet.jsx'
 
 import '@rainbow-me/rainbowkit/styles.css';
 
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
     <Route>
     <Route path='/' element={<Home/>}/>
     <Route path='/swap' element={<Swap/>}/>
+    <Route path='/account' element={<CreateWallet/>}/>
     </Route>
   )
 )

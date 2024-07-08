@@ -26,7 +26,8 @@ const Navbar = () => {
       {/* Create Account button on the right */}
       <div className="pr-4">
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Create Account
+        <a href='/account'> Create Account</a> 
+    
         </button>
       </div>
     </div>
