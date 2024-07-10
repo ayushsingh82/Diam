@@ -26,6 +26,7 @@ import {
   QueryClientProvider,
   QueryClient,
 } from "@tanstack/react-query";
+import { WalletProvider } from './WalletContext.jsx'
 
 const config = getDefaultConfig({
   appName: 'My RainbowKit App',
@@ -48,6 +49,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <WalletProvider>
+
   <WagmiProvider config={config}>
   <QueryClientProvider client={queryClient}>
     <RainbowKitProvider>
@@ -56,5 +59,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </RainbowKitProvider>
   </QueryClientProvider>
   </WagmiProvider>
+    </WalletProvider>
   </React.StrictMode>,
 )

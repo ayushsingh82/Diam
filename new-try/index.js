@@ -1,4 +1,4 @@
-var DiamSdk = require("diamante-sdk-js");
+  var DiamSdk = require("diamante-sdk-js");
 
 const pair = DiamSdk.Keypair.random();
 

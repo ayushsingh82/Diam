@@ -1,17 +1,18 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {copy} from '../assets'
+import { copy } from "../assets";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { createWallet, encrypt } from "../utils/utils";
 import axios from "axios";
 import { useWallet } from "../WalletContext";
-import { createWallet } from "../utils/utils";
 
 const CreateWallet = () => {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [walletData, setWalletData] = useState({});
+  const [submit, setSubmit] = useState(false);
 
   const { setData } = useWallet();
 
@@ -53,9 +54,24 @@ const CreateWallet = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setSubmit(true);
+
       const response = await axios.get(
         `https://friendbot.diamcircle.io?addr=${walletData.public_key}`
       );
+
+      const data = {
+        address: walletData.public_key,
+        Total_Diam_Deposit: 0,
+        Total_USDC_Deposit: 0,
+        Total_USDC_Borrowed: 0,
+        Last_Borrowed: 0,
+        Last_Supplied: 0,
+      };
+
+      await axios.post("http://localhost:3000/userData/send", data);
+
+      setSubmit(false);
 
       if (response.status === 200) {
         const encryptText = encrypt(walletData, password);
@@ -72,7 +88,8 @@ const CreateWallet = () => {
   };
 
   return (
-    <div className="h-full w-[70%] pt-[4.75rem] lg:pt-[5.25rem] flex flex-col items-center mx-auto justify-center">
+    <div className="h-full w-screen overflow-hidden">
+      <div className="h-full w-[70%] pt-[4.75rem] lg:pt-[5.25rem] flex flex-col items-center mx-auto justify-center">
       <ToastContainer />
       <div className="text-[34px] font-bold mb-10">Create Wallet</div>
       <span className="text-base">
@@ -89,12 +106,12 @@ const CreateWallet = () => {
           If you lose it, we cannot recover your funds.
         </strong>
       </span>
-      <div className="flex h-full w-full justify-between">
+      <div className="flex h-full w-full justify-between py-10">
         <div className="h-full w-[50%] flex flex-col justify-center">
           <div className="flex flex-col">
             <p className="text-xl font-bold">Public Key :</p>
-            <div className="mt-5 flex justify-between h-10 bg-site-black items-center rounded-lg">
-              <span className="ml-5">{`${walletData.public_key?.slice(
+            <div className="mt-5 flex justify-between h-10 bg-site-black items-center rounded-lg bg-gray-700">
+              <span className="ml-5 text-white font-bold text-lg">{`${walletData.public_key?.slice(
                 0,
                 10
               )}.....${walletData.public_key?.slice(
@@ -115,8 +132,8 @@ const CreateWallet = () => {
           </div>
           <div className="flex flex-col mt-10">
             <p className="text-xl font-bold">Secret key :</p>
-            <div className="mt-5 flex justify-between h-10 bg-site-black items-center rounded-lg">
-              <span className="ml-5">{`${walletData.secret_key?.slice(
+            <div className="mt-5 flex justify-between h-10 bg-site-black items-center rounded-lg bg-gray-700">
+              <span className="ml-5 text-white font-bold text-lg">{`${walletData.secret_key?.slice(
                 0,
                 11
               )}.....${walletData.secret_key?.slice(
@@ -145,7 +162,7 @@ const CreateWallet = () => {
               <label className="text-2xl">Password :</label>
               <input
                 type="password"
-                placeholder="password@123"
+                placeholder="••••••••"
                 className="h-10 w-full p-5 bg-transparent border-2 border-site-black mt-5"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -153,12 +170,18 @@ const CreateWallet = () => {
               />
             </div>
             <div className="flex justify-between w-full mt-10">
-              <button
-                type="submit"
-                className="bg-purple-600 hover:bg-purple-800 cursor-pointer h-10 w-20 rounded-lg"
-              >
-                Login
-              </button>
+              {submit ? (
+                <div>
+                  Loading ...
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  className="bg-purple-600 hover:bg-purple-800 cursor-pointer h-10 w-36 rounded-lg text-lg text-white font-bold"
+                >
+                  Login
+                </button>
+              )}
               <button
                 type="button"
                 className="text-[#878787] hover:text-gray-500 cursor-pointer ml-10"
@@ -171,6 +194,7 @@ const CreateWallet = () => {
         </div>
       </div>
     </div>
+    </div> 
   );
 };
 
