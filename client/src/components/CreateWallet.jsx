@@ -88,11 +88,11 @@ const CreateWallet = () => {
   };
 
   return (
-    <div className="h-full w-screen overflow-hidden">
-      <div className="h-full w-[70%] pt-[4.75rem] lg:pt-[5.25rem] flex flex-col items-center mx-auto justify-center">
+    <div className="min-h-screen w-screen overflow-hidden bg-black">
+      <div className="h-full  w-[70%] pt-[4.75rem] lg:pt-[5.25rem] flex flex-col items-center mx-auto justify-center">
       <ToastContainer />
-      <div className="text-[34px] font-bold mb-10">Create Wallet</div>
-      <span className="text-base">
+      <div className="text-[34px] font-bold mb-10 text-white">Create Wallet</div>
+      <span className="text-base text-white">
         Create a 6-digit PIN code to secure your account. Your private key will
         be encrypted and stored locally on your device, giving you sole control
         over your funds.{" "}
@@ -109,7 +109,7 @@ const CreateWallet = () => {
       <div className="flex h-full w-full justify-between py-10">
         <div className="h-full w-[50%] flex flex-col justify-center">
           <div className="flex flex-col">
-            <p className="text-xl font-bold">Public Key :</p>
+            <p className="text-xl font-bold text-white">Public Key :</p>
             <div className="mt-5 flex justify-between h-10 bg-site-black items-center rounded-lg bg-gray-700">
               <span className="ml-5 text-white font-bold text-lg">{`${walletData.public_key?.slice(
                 0,
@@ -131,7 +131,7 @@ const CreateWallet = () => {
             </div>
           </div>
           <div className="flex flex-col mt-10">
-            <p className="text-xl font-bold">Secret key :</p>
+            <p className="text-xl font-bold text-white">Secret key :</p>
             <div className="mt-5 flex justify-between h-10 bg-site-black items-center rounded-lg bg-gray-700">
               <span className="ml-5 text-white font-bold text-lg">{`${walletData.secret_key?.slice(
                 0,
@@ -159,11 +159,11 @@ const CreateWallet = () => {
             className="flex flex-col justify-center"
           >
             <div className="flex flex-col justify-center">
-              <label className="text-2xl">Password :</label>
+              <label className="text-2xl text-white">Password :</label>
               <input
                 type="password"
                 placeholder="••••••••"
-                className="h-10 w-full p-5 bg-transparent border-2 border-site-black mt-5"
+                className="h-10 w-full p-5 bg-transparent border-2 border-site-black mt-5 text-white"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required

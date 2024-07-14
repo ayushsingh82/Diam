@@ -13,8 +13,8 @@ const Swap = () => {
   }
 
   return (
-    <div className='bg-gradient-to-r from-purple-900 via-black to-black  min-h-screen'>
-     <h1 className='text-blue-200 text-center text-xl font-semibold'>Swap</h1>
+    <div className='bg-black  min-h-screen'>
+     <h1 className='text-blue-200 text-center text-xl font-semibold'>Bridge Diam Assets</h1>
 
       <div className='flex justify-center items-center mt-[40px] '>
         <div className='relative border-4 border-transparent w-1/3 h-[720px] bg-slate-900'>

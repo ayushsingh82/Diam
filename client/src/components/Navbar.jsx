@@ -2,8 +2,8 @@ import React from 'react';
 
 const Navbar = () => {
     const gradientStyle = {
-        background: 'black',
-        height: '4px',
+        background: '#ADD8E6',
+        height: '1px',
         width: '100%',
         border: 'none',
       };
