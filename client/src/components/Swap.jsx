@@ -14,22 +14,22 @@ const Swap = () => {
 
   return (
     <div className='bg-gradient-to-r from-purple-900 via-black to-black  min-h-screen'>
-    <h1 className='text-blue-200 text-center text-xl font-semibold'>Swap</h1>
+     <h1 className='text-blue-200 text-center text-xl font-semibold'>Swap</h1>
 
       <div className='flex justify-center items-center mt-[40px] '>
-        <div className='relative border-4 border-black w-1/3 h-[720px] bg-white'>
+        <div className='relative border-4 border-transparent w-1/3 h-[720px] bg-slate-900'>
 
           {/* Container for Bridge and settings button */}
           <div className='absolute top-0 left-0 right-0 flex justify-between p-4'>
-            <h1 className='text-black text-xl font-medium'>Bridge</h1>
-            <img className='h-[30px] w-[30px]' src='https://cdn3.emoji.gg/emojis/6576-settings.png' alt='setting-btn' />
+            <h1 className='text-white text-xl font-medium'>Bridge</h1>
+            <img className='h-[30px] w-[30px] text-white' src='https://cdn3.emoji.gg/emojis/6576-settings.png' alt='setting-btn' />
           </div>
 
           {/* Container for from and to */}
           <div className='mt-[60px] p-4'>
             <div className='flex justify-between items-center'>
               <div className='flex flex-col items-start pl-4'>
-                <h3 className='font-medium'>From</h3>
+                <h3 className='font-medium text-white'>From</h3>
                 <select className='mt-2 border border-gray-300 p-2 rounded'>
                   <option value="1">Diam</option>
                   <option value="2">Polygon</option>
@@ -44,7 +44,7 @@ const Swap = () => {
                 </button>
               </div>
               <div className='flex flex-col items-end pr-4'>
-                <h3 className='font-medium'>To</h3>
+                <h3 className='font-medium text-white'>To</h3>
                 <select className='mt-2 border border-gray-300 p-2 rounded'>
                 <option value="1">Arbitrum</option>
                 <option value="2">Polygon</option>
@@ -59,11 +59,11 @@ const Swap = () => {
           {/*Send container*/ }
           <div className='mt-[30px] p-4'>
             <div className='flex justify-between'>
-              <h1 className='font-medium'>You Send</h1>
-              <p className='font-medium'>Balance:</p>
+              <h1 className='font-medium text-white'>You Send</h1>
+              <p className='font-medium text-white'>Balance:</p>
             </div>
 
-            <div className='border p-4 mt-2'>
+            <div className='border border-transparent p-4 mt-2'>
               <div className='flex justify-between'>
                 <select className='border border-gray-300 p-2 rounded'>
                   <option value="1">USDT</option>
@@ -84,11 +84,11 @@ const Swap = () => {
          {/*Receive container*/ }
          <div className='mt-[30px] p-4'>
          <div className='flex justify-between'>
-           <h1 className='font-medium'>You Receive</h1>
-           <p className='font-medium'>Balance:</p>
+           <h1 className='font-medium text-white'>You Receive</h1>
+           <p className='font-medium text-white'>Balance:</p>
          </div>
 
-         <div className='border p-4 mt-2'>
+         <div className='border border-transparent  p-4 mt-2'>
            <div className='flex justify-between'>
              <select className='border border-gray-300 p-2 rounded'>
                <option value="1">DAI</option>
@@ -105,8 +105,8 @@ const Swap = () => {
 
        {/*Additional Info */ }
        <div className='mt-[30px] p-4'>
-       <h1 className='font-medium'>Additional Info</h1>
-       <div className='border p-4 mt-2 flex justify-between'>
+       <h1 className='font-medium text-white'>Additional Info</h1>
+       <div className='border border-blue-300 p-4 mt-2 flex justify-between text-white'>
          <p>Estimated time</p>
          <p>~60 sec</p>
          </div>
