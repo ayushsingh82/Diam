@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
     const gradientStyle = {
-        background: 'linear-gradient(to right, #45E1E5, #0052FF, #B82EA4, #FF9533, #7FD057, #45E1E5)',
+        background: 'black',
         height: '4px',
         width: '100%',
         border: 'none',
