@@ -30,7 +30,7 @@ const Swap = () => {
             <div className='flex justify-between items-center'>
               <div className='flex flex-col items-start pl-4'>
                 <h3 className='font-medium text-white'>From</h3>
-                <select className='mt-2 border border-gray-300 p-2 rounded'>
+                <select className='mt-2 border border-gray-300 p-2 rounded bg-slate-900 text-white'>
                   <option value="1">Diam</option>
                   <option value="2">Polygon</option>
                   <option value="3">Optimism</option>
@@ -45,7 +45,7 @@ const Swap = () => {
               </div>
               <div className='flex flex-col items-end pr-4'>
                 <h3 className='font-medium text-white'>To</h3>
-                <select className='mt-2 border border-gray-300 p-2 rounded'>
+                <select className='mt-2 border border-gray-300 p-2 rounded bg-slate-900 text-white'>
                 <option value="1">Arbitrum</option>
                 <option value="2">Polygon</option>
                 <option value="3">Optimism</option>
@@ -65,13 +65,13 @@ const Swap = () => {
 
             <div className='border border-transparent p-4 mt-2'>
               <div className='flex justify-between'>
-                <select className='border border-gray-300 p-2 rounded'>
+                <select className='border border-gray-300 p-2 rounded bg-slate-900 text-white'>
                   <option value="1">USDT</option>
                   <option value="2">USDC</option>
                   <option value="3">DAI</option>
                 </select>
                 <input
-                  className='ml-4 border border-gray-300 p-2 rounded'
+                  className='ml-4 border border-gray-300 p-2 rounded bg-slate-900 text-white'
                   type='number'
                   value={balance}
                   onChange={handleBalanceChange}
@@ -90,13 +90,13 @@ const Swap = () => {
 
          <div className='border border-transparent  p-4 mt-2'>
            <div className='flex justify-between'>
-             <select className='border border-gray-300 p-2 rounded'>
+             <select className='border border-gray-300 p-2 rounded bg-slate-900 text-white'>
                <option value="1">DAI</option>
                <option value="2">USDT</option>
                <option value="3">USDC </option>
              </select>
              <input
-               className='ml-4 border border-gray-300 p-2 rounded'
+               className='ml-4 border border-gray-300 p-2 rounded bg-slate-900 text-white'
                type='number'
              />
            </div>
